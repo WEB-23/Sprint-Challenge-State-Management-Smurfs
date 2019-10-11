@@ -14,7 +14,7 @@ const SmurfList = ({ createSmurf, getSmurf, smurfs, isFetching, error }) => {
 
   useEffect(() => {
     getSmurf();
-  }, [getSmurf]);
+  }, []);
 
   if (isFetching) {
     return <h3>Smurfs aren't home Yet!</h3>;
@@ -27,14 +27,16 @@ const SmurfList = ({ createSmurf, getSmurf, smurfs, isFetching, error }) => {
       height: smurfHeight
     };
     createSmurf(newSmurf);
-    getSmurf();
   };
+
   const nameHandleChange = event => {
     setSmurfName(event.target.value);
   };
+
   const ageHandleChange = event => {
     setSmurfAge(event.target.value);
   };
+
   const heightHandleChange = event => {
     setSmurfHeight(event.target.value);
   };
